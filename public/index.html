@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/gmaps.css">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Gala STRI</title>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <div id="map"></div>
+    <div id="legend"><h3>Legend</h3></div>
+    <script>
+      function initMap() {
+        const marker_pos = {lat: 43.562139, lng: 1.469958};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: marker_pos
+        });
+
+        var iconBase = '%PUBLIC_URL%/icons/';
+        var icons = {
+          parking: {
+            name: 'Parking',
+            icon: iconBase + 'parking.png'
+          }
+        };
+
+        let marker0 = new google.maps.Marker({
+          position: marker_pos,
+          map: map,
+          animation: google.maps.Animation.DROP,
+          title: 'Batiment U3 - Université Paul Sabatier'
+        });
+        let marker1 = new google.maps.Marker({
+          position: {lat: marker_pos.lat + 0.00028, lng: marker_pos.lng - 0.0015},
+          map: map,
+          animation: google.maps.Animation.DROP,
+          title: 'Parking',
+          icon: icons['parking'].icon
+        });
+        let marker2 = new google.maps.Marker({
+          position: {lat: marker_pos.lat - 0.0007, lng: marker_pos.lng + 0.0015},
+          map: map,
+          animation: google.maps.Animation.DROP,
+          title: 'Parking',
+          icon: icons['parking'].icon
+        });
+        let marker3 = new google.maps.Marker({
+          position: {lat: marker_pos.lat - 0.00175, lng: marker_pos.lng + 0.00265},
+          map: map,
+          animation: google.maps.Animation.DROP,
+          title: 'Parking',
+          icon: icons['parking'].icon
+        });
+        let marker4 = new google.maps.Marker({
+          position: {lat: marker_pos.lat + 0.0018, lng: marker_pos.lng - 0.000225},
+          map: map,
+          animation: google.maps.Animation.DROP,
+          title: 'Parking',
+          icon: icons['parking'].icon
+        });
+        let marker5 = new google.maps.Marker({
+          position: {lat: marker_pos.lat + 0.0003, lng: marker_pos.lng + 0.00155},
+          map: map,
+          animation: google.maps.Animation.DROP,
+          title: 'Parking',
+          icon: icons['parking'].icon
+        });
+        var legend = document.getElementById('legend');
+        for (var key in icons) {
+          var type = icons[key];
+          var name = type.name;
+          var icon = type.icon;
+          var div = document.createElement('div');
+          div.innerHTML = '<img src="' + icon + '"> ' + name;
+          legend.appendChild(div);
+        }
+        map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmBlMmcCimAWQlMkjhlaZLy3WDeiWlJng&callback=initMap"></script>
+  </body>
+</html>

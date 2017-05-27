@@ -1,0 +1,45 @@
+.App {
+  min-width: 780px;
+  text-align: center;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#menu {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.menuItem {
+	display: inline;
+	list-style: none; /* pour enlever les puces */
+	margin: 20px;
+}
+
+.menuItem a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn_inscription {
+    border: 4px solid orange;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: orange;
+    margin: 16px;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn_inscription:hover {
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.btn_inscription:active {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
+  transform: translateY(2px);
+}

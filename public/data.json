@@ -1,0 +1,63 @@
+{
+  "menu": [
+    {
+      "titre": "Notre tradition",
+      "ref": "page1"
+    },
+    {
+      "titre": "Le déroulement de la soirée",
+      "ref": "page2"
+    },
+    {
+      "titre": "Le menu",
+      "ref": "page3"
+    },
+    {
+      "titre": "Inscription",
+      "ref": "inscription"
+    },
+    {
+      "titre": "Contact",
+      "ref": "contact"
+    }
+  ],
+    "page1": {
+      "titre": "Notre tradition",
+      "description1": "blablabla ...",
+      "description2": "blablabla ...",
+      "background": "img/tradition.png"
+    },
+  "page2": {
+    "titre": "Le déroulement de la soirée",
+    "description": "blablabla ...",
+    "background": "img/soiree.png"
+  },
+  "page3": {
+    "titre": "Le menu",
+    "description": "blablabla ...",
+    "plats": [
+      {
+        "titre": "toasts",
+        "description": "blablabla ...",
+        "image": "img/menu/toasts.png"
+      },
+      {
+        "titre": "pizza",
+        "description": "blablabla ...",
+        "image": "img/menu/pizza.png"
+      }
+    ],
+    "background": "img/soiree.png"
+  },
+  "inscription": {
+    "titre": "Inscription",
+    "description": "blablabla ...",
+    "bouton": "S'inscrire",
+    "background": "img/inscription.png"
+  },
+  "contact": {
+    "titre": "Contact",
+    "description": "blablabla ...",
+    "background": "img/contact.png"
+  }
+}
